@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Агролаборатория</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Агролаборатории">
+                <span>АгроЛаб</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О лаборатории</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="partners.html">Партнеры</a></li>
+                <li><a href="media.html">Медиа</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Контакты</h1>
+                <p>Свяжитесь с нами удобным способом</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Контактная информация</h2>
+                        
+                        <div class="contact-item">
+                            <h3>Адрес</h3>
+                            <p>г. Москва, ул. Аграрная, д. 15</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Телефон</h3>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p>info@agrolab.ru</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Часы работы</h3>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 15:00<br>Вс: Выходной</p>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h3>Мы в социальных сетях</h3>
+                            <div class="social-icons">
+                                <a href="#"><span class="social-icon">📘</span> Facebook</a>
+                                <a href="#"><span class="social-icon">📷</span> Instagram</a>
+                                <a href="#"><span class="social-icon">🐦</span> Twitter</a>
+                                <a href="#"><span class="social-icon">📱</span> ВКонтакте</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h2>Написать нам</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Тема сообщения</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="map-section">
+                    <h2>Как нас найти</h2>
+                    <div class="map-placeholder">
+                        <p>Здесь будет карта с расположением нашей лаборатории</p>
+                        <div class="map-image">
+                            <img src="images/map.jpg" alt="Карта проезда к агролаборатории">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Агролаборатория. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Обработка формы обратной связи
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получение данных формы
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Здесь можно добавить код для отправки данных на сервер
+            alert(`Спасибо за ваше сообщение, ${name}!\nМы свяжемся с вами по адресу ${email} в ближайшее время.`);
+            
+            // Очистка формы
+            this.reset();
+        });
+    </script>
+</body>
+</html>

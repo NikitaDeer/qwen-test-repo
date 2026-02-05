@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медиа - Агролаборатория</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Агролаборатории">
+                <span>АгроЛаб</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О лаборатории</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="partners.html">Партнеры</a></li>
+                <li><a href="media.html">Медиа</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Медиа</h1>
+                <p>Фото и видео материалы с наших мероприятий</p>
+            </div>
+        </section>
+
+        <section class="media-section">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все материалы</button>
+                    <button class="filter-btn" data-filter="photo">Фото</button>
+                    <button class="filter-btn" data-filter="video">Видео</button>
+                    <button class="filter-btn" data-filter="event">Мероприятия</button>
+                    <button class="filter-btn" data-filter="lab">Лабораторные работы</button>
+                </div>
+
+                <div class="media-grid">
+                    <div class="media-item" data-category="photo">
+                        <div class="media-content">
+                            <img src="images/media1.jpg" alt="Участники проекта по гидропонике">
+                            <div class="media-overlay">
+                                <h3>Проект по гидропонике</h3>
+                                <p>Ученики 8 класса работают над проектом по выращиванию растений без почвы</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="video">
+                        <div class="media-content">
+                            <img src="images/media2.jpg" alt="Видеозапись лабораторной работы">
+                            <div class="media-overlay">
+                                <h3>Анализ почвы</h3>
+                                <p>Видео лабораторной работы по анализу состава почвы</p>
+                            </div>
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="event">
+                        <div class="media-content">
+                            <img src="images/media3.jpg" alt="Открытие новой лаборатории">
+                            <div class="media-overlay">
+                                <h3>Открытие новой лаборатории</h3>
+                                <p>Торжественное открытие нового лабораторного корпуса</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="lab">
+                        <div class="media-content">
+                            <img src="images/media4.jpg" alt="Микроскопия растений">
+                            <div class="media-overlay">
+                                <h3>Микроскопия растений</h3>
+                                <p>Ученики изучают строение растительных клеток</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="photo">
+                        <div class="media-content">
+                            <img src="images/media5.jpg" alt="Полевые работы">
+                            <div class="media-overlay">
+                                <h3>Полевые работы</h3>
+                                <p>Экспедиция для изучения почвенных экосистем</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="video">
+                        <div class="media-content">
+                            <img src="images/media6.jpg" alt="Интервью с участниками проекта">
+                            <div class="media-overlay">
+                                <h3>Интервью с участниками</h3>
+                                <p>Ученики делятся впечатлениями о проектной деятельности</p>
+                            </div>
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="event">
+                        <div class="media-content">
+                            <img src="images/media7.jpg" alt="Научная конференция">
+                            <div class="media-overlay">
+                                <h3>Научная конференция</h3>
+                                <p>Презентация школьных проектов перед экспертами</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item" data-category="lab">
+                        <div class="media-content">
+                            <img src="images/media8.jpg" alt="Работа с биотехнологиями">
+                            <div class="media-overlay">
+                                <h3>Биотехнологии</h3>
+                                <p>Эксперименты по генной инженерии растений</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Агролаборатория. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Фильтрация медиа материалов
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Удалить активный класс у всех кнопок
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Добавить активный класс к нажатой кнопке
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-filter');
+                
+                document.querySelectorAll('.media-item').forEach(media => {
+                    if(category === 'all' || media.getAttribute('data-category') === category) {
+                        media.style.display = 'block';
+                    } else {
+                        media.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты и исследования - Агролаборатория</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип Агролаборатории">
+                <span>АгроЛаб</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О лаборатории</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="partners.html">Партнеры</a></li>
+                <li><a href="media.html">Медиа</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Проекты и исследования</h1>
+                <p>Узнайте о наших текущих и завершенных школьных проектах</p>
+            </div>
+        </section>
+
+        <section class="projects-detail">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все проекты</button>
+                    <button class="filter-btn" data-filter="biology">Биология</button>
+                    <button class="filter-btn" data-filter="chemistry">Химия</button>
+                    <button class="filter-btn" data-filter="technology">Технологии</button>
+                    <button class="filter-btn" data-filter="ecology">Экология</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="biology">
+                        <img src="images/project1.jpg" alt="Гидропоника в школе">
+                        <h3>Гидропоника в школе</h3>
+                        <p>Ученики изучают современные методы выращивания растений без почвы</p>
+                        <div class="project-meta">
+                            <span class="grade">7-8 классы</span>
+                            <span class="duration">6 месяцев</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="chemistry">
+                        <img src="images/project2.jpg" alt="Анализ почвы">
+                        <h3>Анализ почвы</h3>
+                        <p>Школьники проводят лабораторные исследования для определения состава почвы</p>
+                        <div class="project-meta">
+                            <span class="grade">8-9 классы</span>
+                            <span class="duration">4 месяца</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="technology">
+                        <img src="images/project3.jpg" alt="Биотехнологии">
+                        <h3>Биотехнологии</h3>
+                        <p>Исследования в области генной инженерии растений</p>
+                        <div class="project-meta">
+                            <span class="grade">9 класс</span>
+                            <span class="duration">8 месяцев</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="ecology">
+                        <img src="images/project4.jpg" alt="Экологический мониторинг">
+                        <h3>Экологический мониторинг</h3>
+                        <p>Изучение влияния агропрактик на окружающую среду</p>
+                        <div class="project-meta">
+                            <span class="grade">7-9 классы</span>
+                            <span class="duration">1 год</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="biology">
+                        <img src="images/project5.jpg" alt="Селекция растений">
+                        <h3>Селекция растений</h3>
+                        <p>Работа по выведению новых сортов культурных растений</p>
+                        <div class="project-meta">
+                            <span class="grade">8-9 классы</span>
+                            <span class="duration">10 месяцев</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="technology">
+                        <img src="images/project6.jpg" alt="Автоматизация полива">
+                        <h3>Автоматизация полива</h3>
+                        <p>Разработка систем автоматического полива для теплиц</p>
+                        <div class="project-meta">
+                            <span class="grade">7-9 классы</span>
+                            <span class="duration">5 месяцев</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Агролаборатория. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Фильтрация проектов
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Удалить активный класс у всех кнопок
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Добавить активный класс к нажатой кнопке
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-filter');
+                
+                document.querySelectorAll('.project-card').forEach(project => {
+                    if(category === 'all' || project.getAttribute('data-category') === category) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
